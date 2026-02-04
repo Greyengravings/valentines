@@ -462,7 +462,7 @@
 
   .heart-frame {
     width: 280px;
-    height: 250px;
+    height: 260px;
     margin: 0 auto 20px;
     position: relative;
     display: flex;
@@ -470,22 +470,23 @@
     justify-content: center;
   }
 
-  .heart-frame-bg {
+  .heart-svg-bg {
     position: absolute;
     width: 260px;
     height: 240px;
-    background: linear-gradient(135deg, #ff69b4, #ff1493);
-    clip-path: path('M130,230 C20,130 0,90 0,50 C0,20 30,0 60,25 C90,50 130,110 130,110 C130,110 170,50 200,25 C230,0 260,20 260,50 C260,90 240,130 130,230 Z');
-    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.5);
+    filter: drop-shadow(0 8px 25px rgba(255, 105, 180, 0.5));
   }
 
   .heart-frame img {
     position: absolute;
-    width: 210px;
-    height: 190px;
+    width: 200px;
+    height: 185px;
     object-fit: cover;
-    clip-path: path('M105,185 C30,110 15,80 15,52 C15,30 35,15 55,32 C75,50 105,95 105,95 C105,95 135,50 155,32 C175,15 195,30 195,52 C195,80 180,110 105,185 Z');
-    top: 30px;
+    object-position: center;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 90 C10 50 0 35 0 20 C0 8 10 0 22 8 C34 16 50 40 50 40 C50 40 66 16 78 8 C90 0 100 8 100 20 C100 35 90 50 50 90 Z' fill='black'/%3E%3C/svg%3E") no-repeat center;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 90 C10 50 0 35 0 20 C0 8 10 0 22 8 C34 16 50 40 50 40 C50 40 66 16 78 8 C90 0 100 8 100 20 C100 35 90 50 50 90 Z' fill='black'/%3E%3C/svg%3E") no-repeat center;
+    -webkit-mask-size: 220px 200px;
+    mask-size: 220px 200px;
   }
 
   .template-message {
@@ -628,7 +629,15 @@
       <div class="photo-template" id="photoTemplate">
         <h2 class="template-header">#valentines@26</h2>
         <div class="heart-frame">
-          <div class="heart-frame-bg"></div>
+          <svg class="heart-svg-bg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#ff69b4"/>
+                <stop offset="100%" style="stop-color:#ff1493"/>
+              </linearGradient>
+            </defs>
+            <path fill="url(#heartGradient)" d="M50 90 C10 50 0 35 0 20 C0 8 10 0 22 8 C34 16 50 40 50 40 C50 40 66 16 78 8 C90 0 100 8 100 20 C100 35 90 50 50 90 Z"/>
+          </svg>
           <img id="capturedPhoto" src="" alt="Captured Photo">
         </div>
         <p class="template-message">
