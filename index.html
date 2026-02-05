@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Be My Valentine 💖</title>
+<title>My Valentine 💖</title>
 
 <style>
   * {
@@ -15,7 +15,7 @@
     margin: 0;
     width: 100vw;
     min-height: 100vh;
-    background: linear-gradient(135deg, #ffd6e8, #ffeef7);
+    background: #1a1a1a;
     overflow: hidden;
     position: fixed;
   }
@@ -26,37 +26,7 @@
     height: 100%;
     top: 0;
     left: 0;
-  }
-
-  /* Floating Hearts Confetti */
-  .hearts-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: -1;
-  }
-
-  .floating-heart {
-    position: absolute;
-    font-size: 20px;
-    animation: fallHeart linear infinite;
-    opacity: 0.7;
-    top: -50px;
-  }
-
-  @keyframes fallHeart {
-    0% {
-      transform: translateY(-50px) rotate(0deg);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(110vh) rotate(360deg);
-      opacity: 0.3;
-    }
+    z-index: 1;
   }
 
   /* Decorative doodle hearts background on cards */
@@ -84,7 +54,7 @@
     position: absolute;
     font-size: 16px;
     color: #ff9ab8;
-    opacity: 0.6;
+    opacity: 0.75;
   }
 
   .polaroid::before {
@@ -179,50 +149,50 @@
 
   /* Question card centered and fixed - Larger size */
   .question-card {
-    width: 300px;
+    width: 380px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 22px 22px 55px 22px;
+    padding: 30px 30px 70px 30px;
     background: linear-gradient(135deg, #fff 0%, #ffe8f0 50%, #ffd6e0 100%);
     box-shadow: 0 10px 40px rgba(255, 154, 183, 0.35);
   }
 
-  /* Stacked photo cards over question card - Larger sizes */
+  /* Stacked photo cards over question card - Larger sizes & centered */
   .card-1 {
-    width: 260px;
+    width: 330px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(-12deg) translate(-100px, -80px);
+    transform: translate(-40%, -50%) rotate(-12deg) translate(-55px, 80px);
     z-index: 5;
-    padding: 15px 15px 45px 15px;
+    padding: 22px 22px 60px 22px;
   }
 
   .card-2 {
-    width: 240px;
+    width: 310px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(8deg) translate(95px, -55px);
+    transform: translate(-50%, -50%) rotate(8deg) translate(50px, -35px);
     z-index: 4;
-    padding: 15px 15px 45px 15px;
+    padding: 22px 22px 60px 22px;
   }
 
   .card-3 {
-    width: 280px;
+    width: 350px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(-5deg) translate(-70px, 90px);
+    transform: translate(-50%, -50%) rotate(-5deg) translate(-40px, 50px);
     z-index: 3;
-    padding: 15px 15px 45px 15px;
+    padding: 22px 22px 60px 22px;
   }
 
   /* Question text on question card */
   .question-text {
     color: #e84a7f;
-    font-size: 1.6rem;
+    font-size: 1.9rem;
     font-weight: 600;
-    margin-top: 20px;
-    margin-bottom: 25px;
+    margin-top: 25px;
+    margin-bottom: 30px;
     text-align: center;
     text-shadow: 0 1px 2px rgba(255, 182, 193, 0.5);
   }
@@ -236,8 +206,8 @@
   }
 
   .polaroid-btn {
-    padding: 18px 38px;
-    font-size: 1.1rem;
+    padding: 22px 45px;
+    font-size: 1.2rem;
     font-weight: 600;
     border-radius: 30px;
     border: none;
@@ -273,8 +243,8 @@
   /* Emoji caption below photo */
   .polaroid-caption {
     text-align: center;
-    margin-top: 15px;
-    font-size: 1.8rem;
+    margin-top: 18px;
+    font-size: 2.2rem;
     animation: pulse 1.5s ease-in-out infinite;
   }
 
@@ -461,8 +431,8 @@
   }
 
   .heart-frame {
-    width: 280px;
-    height: 260px;
+    width: 260px;
+    height: 240px;
     margin: 0 auto 20px;
     position: relative;
     display: flex;
@@ -472,21 +442,24 @@
 
   .heart-svg-bg {
     position: absolute;
-    width: 260px;
-    height: 240px;
+    width: 100%;
+    height: 100%;
     filter: drop-shadow(0 8px 25px rgba(255, 105, 180, 0.5));
   }
 
   .heart-frame img {
     position: absolute;
-    width: 200px;
-    height: 185px;
+    width: 140px;
+    height: 130px;
     object-fit: cover;
     object-position: center;
-    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 90 C10 50 0 35 0 20 C0 8 10 0 22 8 C34 16 50 40 50 40 C50 40 66 16 78 8 C90 0 100 8 100 20 C100 35 90 50 50 90 Z' fill='black'/%3E%3C/svg%3E") no-repeat center;
-    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 90 C10 50 0 35 0 20 C0 8 10 0 22 8 C34 16 50 40 50 40 C50 40 66 16 78 8 C90 0 100 8 100 20 C100 35 90 50 50 90 Z' fill='black'/%3E%3C/svg%3E") no-repeat center;
-    -webkit-mask-size: 220px 200px;
-    mask-size: 220px 200px;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 88 C10 55 0 38 0 22 C0 10 10 0 22 8 C35 15 50 35 50 35 C50 35 65 15 78 8 C90 0 100 10 100 22 C100 38 90 55 50 88 Z' fill='black'/%3E%3C/svg%3E") no-repeat center;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 88 C10 55 0 38 0 22 C0 10 10 0 22 8 C35 15 50 35 50 35 C50 35 65 15 78 8 C90 0 100 10 100 22 C100 38 90 55 50 88 Z' fill='black'/%3E%3C/svg%3E") no-repeat center;
+    -webkit-mask-size: 160px 150px;
+    mask-size: 160px 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .template-message {
@@ -534,31 +507,113 @@
     color: white;
   }
 
+  /* Gift Button Container */
+  .gift-btn-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+  }
+
+  .gift-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .gift-btn:hover {
+    transform: scale(1.1);
+  }
+
+  .gift-btn img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 15px rgba(255, 105, 180, 0.4));
+  }
+
+  .gift-label {
+    color: #888;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+  }
+
   @media (max-width: 480px) {
-    .question-card { width: 240px; padding: 18px 18px 48px 18px; }
-    
-    .card-1 { width: 200px; transform: translate(-50%, -50%) rotate(-12deg) translate(-80px, -65px); padding: 12px 12px 38px 12px; }
-    .card-2 { width: 185px; transform: translate(-50%, -50%) rotate(8deg) translate(75px, -50px); padding: 12px 12px 38px 12px; }
-    .card-3 { width: 215px; transform: translate(-50%, -50%) rotate(-5deg) translate(-55px, 70px); padding: 12px 12px 38px 12px; }
-    
-    .question-text { font-size: 1.3rem; margin-top: 16px; margin-bottom: 20px; }
-    .polaroid-btn { padding: 14px 28px; font-size: 1rem; }
-    .polaroid-caption { font-size: 1.5rem; margin-top: 12px; }
-    
-    .yes-content h1 { font-size: 2.2rem; }
-    .yes-message { font-size: 1.1rem; }
-    .heart-frame { width: 200px; height: 200px; }
-    .heart-frame img { width: 160px; height: 145px; top: 20px; }
-    .camera-header { font-size: 1.6rem; }
-    .template-header { font-size: 1.5rem; }
+    .question-card { width: 320px; padding: 25px 25px 60px 25px; }
+
+    .card-1 { width: 270px; transform: translate(-50%, -50%) rotate(-12deg) translate(-45px, -40px); padding: 18px 18px 50px 18px; }
+    .card-2 { width: 250px; transform: translate(-50%, -50%) rotate(8deg) translate(42px, -30px); padding: 18px 18px 50px 18px; }
+    .card-3 { width: 280px; transform: translate(-50%, -50%) rotate(-5deg) translate(-35px, 42px); padding: 18px 18px 50px 18px; }
+
+    .question-text { font-size: 1.6rem; margin-top: 20px; margin-bottom: 25px; }
+    .polaroid-btn { padding: 20px 38px; font-size: 1.1rem; }
+    .polaroid-caption { font-size: 2rem; margin-top: 15px; }
+
+    .yes-content h1 { font-size: 2.6rem; }
+    .yes-message { font-size: 1.2rem; }
+    .heart-frame { width: 240px; height: 220px; }
+    .heart-frame img { width: 125px; height: 115px; transform: translate(-50%, -50%); }
+    .camera-header { font-size: 1.8rem; }
+    .template-header { font-size: 1.7rem; }
+  }
+
+  /* ========== LOADING SCREEN ========== */
+  .loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    overflow: hidden;
+  }
+
+  .loading-screen.hidden {
+    display: none;
+  }
+
+  /* Full screen video loading */
+  .loading-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Background video for card screen */
+  .background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+    z-index: -1;
+    pointer-events: none;
   }
 </style>
 </head>
 
 <body>
 
-<!-- Floating Hearts Confetti -->
-<div class="hearts-container" id="heartsContainer"></div>
+<!-- Loading Screen - Full Screen Video -->
+<div class="loading-screen" id="loadingScreen">
+  <video class="loading-video" id="loadingVideo" playsinline muted>
+    <source src="loading.mp4" type="video/mp4">
+  </video>
+</div>
+
+<!-- Background Video for Card Screen -->
+<video class="background-video" id="backgroundVideo" playsinline muted loop>
+  <source src="loading.mp4" type="video/mp4">
+</video>
 
 <div class="container">
   <!-- Photo Polaroid 1 - Stacked over question card -->
@@ -610,7 +665,13 @@
       You've made me the happiest person alive!<br>
       This Valentine's Day marks the beginning of our forever 💖"
     </p>
-    <button class="valentine-cam-btn" id="camBtn">📸 Valentine's Cam 💖</button>
+    <!-- Gift Button - Click to open camera directly -->
+    <div class="gift-btn-container" id="giftBtnContainer">
+      <button class="gift-btn" id="giftBtn">
+        <img src="gift.png" alt="Gift">
+      </button>
+      <p class="gift-label">click me to record a sweet memory</p>
+    </div>
   </div>
 </div>
 
@@ -656,32 +717,60 @@
 
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 <script>
-  // ========== FLOATING HEARTS CONFETTI ==========
-  const heartsContainer = document.getElementById('heartsContainer');
-  const heartEmojis = ['💕', '💖', '💗', '💓', '💝', '💘', '❤️',];
-
-  function createHeart() {
-    const heart = document.createElement('div');
-    heart.className = 'floating-heart';
-    heart.innerHTML = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
-    heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
-    heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
-    heart.style.opacity = Math.random() * 0.5 + 0.5;
-    heartsContainer.appendChild(heart);
-
+  // ========== LOADING SCREEN WITH VIDEO ==========
+  const loadingScreen = document.getElementById('loadingScreen');
+  const loadingVideo = document.getElementById('loadingVideo');
+  
+  // Initialize video loading screen
+  function initLoadingScreen() {
+    // Set video to start at 1 second
+    loadingVideo.currentTime = 1;
+    
+    // Play video when ready
+    loadingVideo.play().catch(error => {
+      console.log('Auto-play prevented:', error);
+      // Fallback: hide loading screen after timeout anyway
+      hideLoadingScreen();
+    });
+    
+    // Hide loading screen after 5 seconds total (play from 1s to 5s = 4 seconds)
+    hideLoadingScreen();
+  }
+  
+  function hideLoadingScreen() {
     setTimeout(() => {
-      heart.remove();
-    }, 7000);
+      loadingScreen.classList.add('hidden');
+      setTimeout(() => {
+        loadingScreen.style.display = 'none';
+      }, 500);
+    }, 4000); // 4 seconds total (1s offset + 3s play = 4s display)
+  }
+  
+  // Initialize loading screen when page loads
+  initLoadingScreen();
+
+  // ========== BACKGROUND VIDEO ==========
+  const backgroundVideo = document.getElementById('backgroundVideo');
+  const container = document.querySelector('.container');
+  
+  // Start background video when loading screen hides
+  function startBackgroundVideo() {
+    // Set video to start at 3s (so it plays last 2 seconds: 3s to 5s)
+    backgroundVideo.currentTime = 3;
+    backgroundVideo.play().catch(error => {
+      console.log('Background video auto-play prevented:', error);
+    });
+    
+    // Fade in cards
+    container.style.opacity = '0';
+    container.style.transition = 'opacity 1s ease';
+    setTimeout(() => {
+      container.style.opacity = '1';
+    }, 500);
   }
 
-  // Create hearts continuously
-  setInterval(createHeart, 400);
-
-  // Create initial batch
-  for (let i = 0; i < 15; i++) {
-    setTimeout(createHeart, i * 300);
-  }
+  // Start background video after loading screen hides
+  setTimeout(startBackgroundVideo, 4000);
 
   // ========== DRAGGABLE CARDS ==========
   const photoCards = document.querySelectorAll('.photo-card');
@@ -772,19 +861,48 @@
     const cardRect = card.getBoundingClientRect();
     const maxX = cardRect.width - 120;
     const maxY = cardRect.height - 80;
-    
+
     const x = Math.random() * maxX - (maxX / 2);
     const y = Math.random() * maxY - (maxY / 2);
-    
+
     noBtn.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
-    
+
     // Change button text cyclically
     noBtn.textContent = noButtonMessages[messageIndex];
     messageIndex = (messageIndex + 1) % noButtonMessages.length;
+
+    // Check for overlap with photo cards and lower z-index if overlapping
+    const noBtnRect = noBtn.getBoundingClientRect();
+    const photoCards = document.querySelectorAll('.photo-card');
+
+    photoCards.forEach(photoCard => {
+      const photoCardRect = photoCard.getBoundingClientRect();
+
+      if (isOverlapping(noBtnRect, photoCardRect)) {
+        // Lower z-index if overlapping
+        if (!photoCard.dataset.originalZIndex) {
+          photoCard.dataset.originalZIndex = photoCard.style.zIndex || getComputedStyle(photoCard).zIndex;
+        }
+        photoCard.style.zIndex = '0';
+      } else {
+        // Restore original z-index when no longer overlapping
+        if (photoCard.dataset.originalZIndex) {
+          photoCard.style.zIndex = photoCard.dataset.originalZIndex;
+          delete photoCard.dataset.originalZIndex;
+        }
+      }
+    });
   }
 
-  noBtn.addEventListener("mouseover", moveNoButton);
-  noBtn.addEventListener("touchstart", moveNoButton);
+  // Helper function to check if two rectangles overlap
+  function isOverlapping(rect1, rect2) {
+    return !(rect1.right < rect2.left ||
+             rect1.left > rect2.right ||
+             rect1.bottom < rect2.top ||
+             rect1.top > rect2.bottom);
+  }
+
+  // Only trigger on click - changing text twice was caused by multiple event listeners
   noBtn.addEventListener("click", moveNoButton);
 
   // ========== YES BUTTON ==========
@@ -792,8 +910,27 @@
     yesScreen.classList.add("active");
   });
 
+  // ========== GIFT BUTTON - DIRECT TO CAMERA ==========
+  const giftBtn = document.getElementById('giftBtn');
+  const giftContainer = document.getElementById('giftBtnContainer');
+
+  giftBtn.addEventListener('click', () => {
+    // Hide gift elements
+    giftContainer.style.opacity = '0';
+    giftContainer.style.transform = 'scale(0)';
+    
+    // Hide yes-screen content for cleaner transition
+    const yesContent = document.querySelector('.yes-content');
+    yesContent.style.opacity = '0';
+    yesContent.style.transition = 'opacity 0.3s ease';
+    
+    // Directly open camera screen
+    setTimeout(() => {
+      openCamera();
+    }, 300);
+  });
+
   // ========== CAMERA FUNCTIONALITY ==========
-  const camBtn = document.getElementById('camBtn');
   const cameraScreen = document.getElementById('cameraScreen');
   const video = document.getElementById('video');
   const canvas = document.getElementById('canvas');
@@ -807,7 +944,8 @@
 
   let stream = null;
 
-  camBtn.addEventListener('click', async () => {
+  // Reusable function to open camera
+  async function openCamera() {
     cameraScreen.classList.add('active');
     cameraMode.style.display = 'block';
     photoMode.style.display = 'none';
@@ -822,7 +960,11 @@
       alert('Could not access camera. Please ensure camera permissions are granted.');
       cameraScreen.classList.remove('active');
     }
-  });
+  }
+
+  // Cam button click (not needed when going directly from gift)
+  // const camBtn = document.getElementById('camBtn');
+  // camBtn.addEventListener('click', openCamera);
 
   captureBtn.addEventListener('click', () => {
     canvas.width = video.videoWidth;
@@ -897,4 +1039,3 @@
 
 </body>
 </html>
-
